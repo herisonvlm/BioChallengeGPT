@@ -1,15 +1,13 @@
 # --- Challenge 005 – Protein Sequence Modification --- #
 
-# ---           Step 1          --- #
-# --- Create a Protein Sequence --- #
+# --- Step 1: Create a Protein Sequence --- #
 protein_seq = "MKTAFCLG"
 
-# ---        Step 2       --- #
-# --- Replace Amino Acids --- #
-substitutions = {"A":"X", "F":"Y"}
-def modify_protein(sequence, substitutions):
+# --- Step 2: Replace Amino Acids --- #
+def modify_protein(sequence):
+    substitutions = {"A":"X", "F":"Y"}
     new_protein_sequence = ''
-    for amino in protein_seq:
+    for amino in sequence:
         if amino in substitutions:
             new_protein_sequence += substitutions[amino]
         else:
@@ -18,6 +16,6 @@ def modify_protein(sequence, substitutions):
 
     
 # --- Main block --- #
-modified_protein = modify_protein(protein_seq, substitutions)
+modified_protein = modify_protein(protein_seq)
 print('Original sequence:', protein_seq)
 print('Modified sequence:', modified_protein)
